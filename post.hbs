@@ -1,0 +1,55 @@
+{{!< default}}
+
+{{#post}}
+
+    <div class="title wow fadeInUp goLeft genius">
+        <img class="subCover hideMe" src="">
+        <div id="overlay" class="hideMe"></div>
+        <h1>{{title}}</h1>
+        <p class="subline">Bring Beautiful, Smooth CSS Animations to Life</p>
+        <p class="preview"><span class="langBy">by</span> <strong>{{{author.name}}}</strong> <span class="langPostedIn">&#8212; Posted in</span> <strong>CSS / Animation</strong> <span class="langOn">on</span> <strong>{{date format='dddd, MMMM DD, YYYY'}}</strong></p>
+        <p class="tagged">Tagged: {{tags}}</p>
+    </div>
+    <article class="content wow fadeInUp {{post_class}}">
+        <div>
+            {{{content}}}
+            <!--<hr>-->
+            <section class="" style="font-size: 1.2em;padding-top: 10px;float: right;">
+                <strong style="position: relative;top: -6px;right: 32px;"><span class="langShare">SHARE THIS POST:</span> </strong>
+                <a class="social twitter-share-link" href="http://twitter.com/share?text={{title}} {{url}}"
+                   onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fa fa-twitter"></i></a>
+                <a class="social facebook-share-link" href="https://www.facebook.com/sharer/sharer.php?u={{url}}"
+                   onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><i class="fa fa-facebook"></i></a>
+                <a class="social google-plus-share-link" href="https://plus.google.com/share?url={{url}}"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><i class="fa fa-google-plus"></i></a>
+            </section>
+            <hr class="mooble" style="margin-top:5em">
+            <div class="thanked">
+                <p class="thanks">{{author.bio}}&nbsp;</p>
+            </div>
+            <div class="author">
+                <img class="face" src="{{author.profile_image}}">
+                <div>
+                    <i><strong>{{author.location}}&nbsp;</strong></i>
+                    <h3>{{{author.name}}}&nbsp;</h3>
+                    <a class="location" href="{{author.website}}">{{author.website}}&nbsp;</a>
+                </div>
+                <p class="whiz">
+                    <a href="" class="social gee facebook" target="social"><i class="fa fa-facebook"></i></a>
+                    <a href="" class="social gee twitter" target="social"><i class="fa fa-twitter"></i></a>
+                    <a href="" class="social gee gplus" target="social"><i class="fa fa-google-plus"></i></a>
+                    <a href="" class="social gee pinterest" target="social"><i class="fa fa-pinterest"></i></a>
+                    <a href="" class="social gee github" target="social"><i class="fa fa-github"></i></a>
+                </p>
+            </div>
+
+
+            <hr>
+            <div id="disqus_thread"></div>
+        </div>
+    </article>
+    <script>var indexPage = 0;</script>
+
+{{/post}}
+
+<div id='posts' class="hideMe"></div>

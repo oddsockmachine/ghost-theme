@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <title>Spectre: The Single-Page App Theme for Ghost</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Vollkorn:400,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://cdnjs.cloudflare.com/ajax/libs/fluidbox/1.3.3/jquery.fluidbox.css' rel='stylesheet' type='text/css'>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css" rel='stylesheet' type='text/css'>
+    <link href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link href='assets/css/highlighter.css' rel='stylesheet' type='text/css'>
+    <link href="assets/css/normalize.css" rel='stylesheet' type='text/css'>
+    <link href="assets/css/style.css" rel='stylesheet' type='text/css' id="styleSheet">
+    <!--<link href="/assets/css/all.min.css?v=b1716ed056" rel='stylesheet' type='text/css'>-->
+
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<link rel="alternate" type="application/rss+xml" title="Spectre Theme" href="/rss/">
+</head>
+<body class="wow fadeInUp post-template tag-help tag-readme tag-quickstart tag-installation tag-getting-started-2">
+
+<nav class="container contained" id="menu" style="background: rgb(0, 0, 0);">
+    <div class="menu">
+        <a href="#" class="collapse" id="collapse">Menu &nbsp;≡</a>
+        <ul class="full">
+            <li class="logo"><a href="#">Spectre Theme Documentation</a>
+            </li>
+                        <span class="pull-right">
+
+                                <li><a href="mailto:support@kidgodzilla.com" class="hasChildren">GET SUPPORT</a></li>
+
+                                <li><a href="http://steady-wagon-90-133356.usw1-2.nitrousbox.com:8080/" class="hasChildren">VIEW DEMO</a></li>
+
+                        </span>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</nav>
+
+<a name="top"></a>
+
+<div class="title wow fadeInUp goLeft genius">
+    <img class="subCover hideMe" src="">
+    <div id="overlay" class="hideMe"></div>
+    <h1>Spectre</h1>
+    <p class="subline"> The Single-Page App Theme for Ghost</p>
+    <p class="preview">Author: <strong>Dgamr</strong> &#8212; Released on <strong>Sunday, August 5rd, 2014</strong></p>
+</div>
+<article class="content wow fadeInUp post tag-help tag-readme tag-quickstart tag-installation tag-getting-started-2">
+    <div>
+        <p>A Single-Page App Theme for Ghost, adding categories, subcategories, syntax highlighting, &amp; a beautiful, touch-friendly interface.</p>
+
+<p>Thank you for purchasing the Spectre Theme for Ghost. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form. Thanks so much!</p>
+
+<p>
+    <ol>
+        <li><a href="#installation">INSTALLATION</a></li>
+        <li><a href="#writing">WRITING A POST</a></li>
+        <li><a href="#usage">USING THE SPECTRE THEME</a></li>
+        <li><a href="#fallback">iOS / MOBILE FALLBACK, SEO-FRIENDLY PAGES</a></li>
+        <li><a href="#disqus">ENABLING DISQUS COMMENTS</a></li>
+        <li><a href="#social-media">ENABLING SOCIAL MEDIA LINKS</a></li>
+        <li><a href="#license">COPYRIGHT & LICENSE</a></li>
+        <li><a href="#credits">CREDITS</a></li>
+        <li><a href="#changelog">CHANGELOG</a></li>
+    </ol>
+</p>
+
+        <br><hr><br>
+
+
+
+<a name="installation"></a>
+<h2 id="installation">Installation</h2>
+
+<p>Unzip this theme to <strong>./ghost/content/themes/</strong> &amp; select it from the <strong>General Settings</strong> page.</p>
+
+<p>While you're there, set <strong>Posts per page</strong> to <strong>1000</strong>.</p>
+
+<p>Your <strong>Blog Title</strong> is what will appear as your site logo in the upper-left hand corner of the app.</p>
+
+<p>You can upload a default <strong>Blog Cover</strong>, which will be displayed for any post without a cover defined.</p>
+
+<p>The information in your  <strong>User Settings</strong> will be displayed at the bottom of each post (except for the cover).</p>
+
+<p>You will also need to edit the line of your <strong>./ghost/config.js</strong> file which contains your blog URL. (See Ghost documentation)</p>
+
+        <p class="pull-right"><a href="#top">Back to Top</a></p><br><br>
+        <a name="writing"></a>
+
+<h2 id="writingapost">Writing a Post</h2>
+
+<p>All current Ghost features are supported, along with a few additions. </p>
+
+<p>Posts are written using markdown. (See Ghost documentation)</p>
+
+<h3 id="coverimage">Cover Image</h3>
+
+<p>You can set an optional cover image by including the following snippet at the bottom of your page:</p>
+
+<pre><code>cover: http://url-to-your-image.jpg
+</code></pre>
+
+<p>Ensuring that you replace <strong>http://url-to-your-image.jpg</strong> with the URL to the image you wish to use.</p>
+
+<h3 id="categoriessubcategories">Categories &amp; Subcategories</h3>
+
+<p>You can optionally place your blog posts inside categories and subcategories by including the following snippet at the bottom of your page:</p>
+
+<pre><code>category: Blogging
+subcategory: Ghost
+</code></pre>
+
+<p>Ensuring that you replace <strong>Blogging</strong> and <strong>Ghost</strong> with your respective category and subcategory. These are case sensitive, and will be used <br />
+to automatically generate a dropdown menu for your blog, which will display links to only posts in specific subcategories.</p>
+
+<h3 id="subtitle">Subtitle</h3>
+
+<p>A subtitle is an optional secondary title for your blog post, displayed below the headline title.</p>
+
+<p>You can optionally add a subtitle to your posts by including the following snippet at the bottom of your page:</p>
+
+<pre><code>subtitle: This is my blog subtitle
+</code></pre>
+
+<p>Ensuring that you replace <strong>This is my blog subtitle</strong> with your desired post subtitle.</p>
+
+        <p class="pull-right"><a href="#top">Back to Top</a></p><br><br>
+
+
+
+
+
+        <a name="usage"></a>
+        <h2>Using the Spectre Theme</h2>
+
+        <p>The Spectre theme automatically adds many new features to Ghost, including:</p>
+
+        <ol>
+            <li>Touch / Swipe Navigation  </li>
+            <li>Keyboard Navigation  </li>
+            <li>Menu Navigation  </li>
+            <li>Categories / Subcategories  </li>
+            <li>A Single-page application interface (No page reloads!)  </li>
+            <li>Lightbox for images  </li>
+            <li>Syntax highlighting for code blocks  </li>
+            <li>Disqus Commenting  </li>
+            <li>Social Profiles</li>
+        </ol>
+
+        <h3 id="navigatingposts">Navigating Posts</h3>
+
+        <p>In the Ghost App, posts are displayed in a fullscreen slider when the page loads.</p>
+
+        <p>Try swiping left / right, pressing left / right on the keyboard, or using the left / right arrows to navigate between posts.</p>
+
+        <p>Swiping down, pressing the down key, or clicking the down arrow will take you to the full post.</p>
+
+        <p class="pull-right"><a href="#top">Back to Top</a></p><br><hr><br>
+
+        <a name="fallback"></a>
+
+        <h2 id="iosmobilefallbackseofriendlypages">iOS / Mobile fallback, SEO Friendly pages</h2>
+
+        <p>An alternate, static set of pages are generated for the index and for each post to facilitate mobile and iOS viewing. This also acts as a set of SEO friendly pages which can be crawled by google &amp; other web robots.</p>
+
+        <p>This will appear automatically &amp; doesn't require any additional setup.</p>
+
+        <p class="pull-right"><a href="#top">Back to Top</a></p><br><hr><br>
+
+
+
+
+
+        <a name="disqus"></a>
+
+        <h2 id="enablingdisquscomments">Enabling Disqus Comments</h2>
+
+        <p>To enable comments on your blog, sign up for an account at <strong>disqus.com</strong>. You will be given a <strong>Disqus Shortname</strong> for your blog.</p>
+
+        <p>Enter this shortname inside your <strong>Blog Description</strong> on the <strong>General Settings</strong> page. Make sure it is on a line all by itself, preceeded by <strong>shortname:</strong></p>
+
+        <p>For example, my shortname is kidgodzilla, so my blog description looks like this:</p>
+
+<pre><code>Just a blogging platform.
+    shortname: kidgodzilla
+</code></pre>
+
+        <p class="pull-right"><a href="#top">Back to Top</a></p><br><br>
+
+        <a name="social-media"></a>
+
+<h2 id="enablingsocialmedialinks">Enabling social media links</h2>
+
+<p>You can enable any number of social media links to be displayed below each post by including the following snippet in your <strong>Author Bio</strong>:</p>
+
+<pre><code>Thanks for reading this post! Follow our blog for instant updates.
+facebook: kidgodzilla
+twitter: @dgamr
+gplus: +dGamr
+pinterest: dgamr
+github: kidgodzilla
+</code></pre>
+
+<p>Ensuring that you replace my usernames above with your account usernames. If you do not wish to display a social media link for a <br />
+particular service, ensure you do not include the line for that service. Links will appear automatically at the bottom of each post.</p>
+
+        <p class="pull-right"><a href="#top">Back to Top</a></p><br><br>
+        <a name="license"></a>
+
+<h2 id="copyrightlicense">Copyright &amp; License</h2>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND <br />
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+        <p class="pull-right"><a href="#top">Back to Top</a></p><br><br>
+        <a name="credits"></a>
+
+        <h2>Credits</h2>
+        <ul>
+            <li><strong>UNSPLASH: </strong> <a href="http://unsplash.com">http://unsplash.com</a></li>
+            <li><strong>FONT AWESOME: </strong> <a href="http://fortawesome.github.io/Font-Awesome">http://fortawesome.github.io/Font-Awesome</a></li>
+            <li><strong>GOOGLE FONTS: </strong> <a href="https://www.google.com/fonts">https://www.google.com/fonts</a></li>
+            <li><strong>JQUERY: </strong> <a href="http://jquery.com">http://jquery.com</a></li>
+            <li><strong>PRISMJS: </strong> <a href="http://prismjs.com/">http://prismjs.com/</a></li>
+            <li><strong>FLUIDBOX: </strong> <a href="http://terrymun.github.io/Fluidbox/">http://terrymun.github.io/Fluidbox/</a></li>
+            <li><strong>TOUCHSWIPE: </strong> <a href="http://labs.rampinteractive.co.uk/touchSwipe/demos/">http://labs.rampinteractive.co.uk/touchSwipe/demos/</a></li>
+            <li><strong>HANDLEBARS: </strong> <a href="http://handlebarsjs.com/">http://handlebarsjs.com/</a></li>
+            <li><strong>UNDERSCORE: </strong> <a href="http://underscorejs.org/">http://underscorejs.org/</a></li>
+            <li><strong>VELOCITYJS: </strong> <a href="https://github.com/julianshapiro/velocity">https://github.com/julianshapiro/velocity</a></li>
+            <li><strong>WOWJS: </strong> <a href="http://mynameismatthieu.com/WOW/">http://mynameismatthieu.com/WOW/</a></li>
+            <li><strong>SIMPLE JSON FILTER: </strong> <a href="https://github.com/hash-bang/simpleJSONFilter">https://github.com/hash-bang/simpleJSONFilter</a></li>
+            <li><strong>CLASSIE: </strong> <a href="https://github.com/desandro/classie">https://github.com/desandro/classie</a></li>
+        </ul>
+
+
+        <p class="pull-right"><a href="#top">Back to Top</a></p><br><br>
+
+
+
+        <a name="changelog"></a>
+
+        <h2>Changelog</h2>
+        <ul>
+            <li><strong>v0.79: </strong> Ghost v0.5 compatibility fixes</li>
+            <li><strong>v0.78: </strong> Initial Release</li>
+        </ul>
+
+
+        <p class="pull-right"><a href="#top">Back to Top</a></p><br><br>
+
+
+    </div>
+</article>
+
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.velocity/0.4.1/jquery.velocity.min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
+<script type="text/javascript" src="assets/js/highlighter.js?v=b1716ed056"></script>
+<script type="text/javascript" src="assets/js/velocity.ui.js?v=b1716ed056"></script>
+
+<script>
+    $('.content code').each(function() {
+        $(this).addClass('language-css language-markup');
+    });
+</script>
+</body>
+</html>

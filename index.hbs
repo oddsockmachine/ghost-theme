@@ -1,0 +1,94 @@
+{{!< default}}
+
+<div id="container" class="container intro-effect-push"></div>
+
+<div class="breathingRoom"></div>
+
+{{#foreach posts}}
+
+    <article class="static-post wow fadeInUp {{post_class}}" data-wow-offset="100">
+        <div class="boxContainer">
+            <h3 class="category"></h3>
+            <a href="{{url}}"><h1>{{title}}</h1></a>
+            <hr>
+            <p class="posted"><span class="langPostedBy">Posted by</span> <strong><span class="thisAuthor">{{author}}</span></strong> <span class="langOn">on</span> <strong><span class="thisDate">{{date format="dddd, MMMM DD, YYYY"}}</span></strong></p>
+            <p class="excerpt">{{{excerpt}}}</p>
+            <div class="fullPost hideMe">{{content}}</div>
+            <div class="authorImage hideMe">{{{author.profile_image}}}</div>
+            <div class="authorLocation hideMe">{{{author.location}}}</div>
+            <div class="authorWebsite hideMe">{{{author.website}}}</div>
+            <p class="thanks hideMe">{{author.bio}}</p>
+            <p class="tagged hideMe">Tagged: {{tags}}</p>
+            <p><a href="{{url}}"><button><span class="langReadFullPost">Read Full Post</span> <span>&rarr;</span></button></a></p>
+        </div>
+    </article>
+
+{{/foreach}}
+
+<script id="post-template" type="text/x-handlebars-template">
+    <header class="header">
+        <div class="bg-img">
+            <img id="cover" src="{-{#if cover}}{-{cover}}{-{else}}http://38.media.tumblr.com/7a940d6c469ca7ab1010d19fd509299b/tumblr_n8gxyxzzbN1st5lhmo1_1280.jpg{-{/if}}" alt="Background Image"/>
+        </div>
+        <div id="overlay"></div>
+        <div class="title">
+            {-{#if category}}<h3><span><a href="#!/{-{category}}/{-{subcategory}}/" data-cat="/{-{category}}/{-{subcategory}}/" onclick="if(fallback){window.location.assign(blogUrl+&quot;/#!/general/default/&quot;);fixRedirect()}">{-{#if category}}{-{category}}{-{/if}}{-{#if subcategory}} / {-{subcategory}}{-{/if}}</a></span></h3>{-{/if}}
+            <a class="trigger"><h1>{-{title}}</h1></a>
+            {-{#if subtitle}}<p class="subline">{-{subtitle}}</p>{-{/if}}
+            <p class="posted"><span class="langPostedBy">Posted by</span> <strong>{-{-{author.name}}}</strong> <span class="langOn">on</span> <strong>{-{date}}</strong></p>
+            <p class="summary">{-{summary}}</p>
+        </div>
+        <div class="arrow-left" id="al">
+            <a href="#" onclick="goLeft();return false;"><img src="{{asset "img/l.png"}}"></a>
+        </div>
+        <div class="arrow-right" id="ar">
+            <a href="#" onclick="goRight();return false;"><img src="{{asset "img/r.png"}}"></a>
+        </div>
+        <div class="arrow-down">
+            <a onclick="return: false" class="trigger"><i class="fa fa-chevron-circle-down"></i></a>
+        </div>
+    </header>
+    <div class="title">
+        <h1>{-{title}}</h1>
+        {-{#if subtitle}}<p class="subline">{-{subtitle}}</p>{-{/if}}
+        <p class="preview"><span class="langBy">by</span> <strong>{-{-{author.name}}}</strong> <span class="langPosted">&#8212; Posted</span> {-{#if category}}<span class="langIn">in</span> <strong>{-{category}}{-{/if}}{-{#if subcategory}} / {-{subcategory}}{-{/if}}</strong> <span class="langOn">on</span> <strong>{-{date}}</strong></p>
+        <p class="tagged">{-{-{tagged}}}</p>
+    </div>
+    <article class="content">
+        <div>
+            {-{-{content}}}
+            <!--<hr>-->
+            <section class="" style="font-size: 1.2em;padding-top: 10px;float: right;">
+                <strong style="position: relative;top: -6px;right: 32px;"><span class="langShare">SHARE THIS POST:</span> </strong>
+                <a class="social twitter-share-link" href="http://twitter.com/share?text={-{title}} {{@blog.url}}{-{titleSlug}}"
+                   onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fa fa-twitter"></i></a>
+                <a class="social facebook-share-link" href="https://www.facebook.com/sharer/sharer.php?u={{@blog.url}}{-{titleSlug}}"
+                   onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><i class="fa fa-facebook"></i></a>
+                <a class="social google-plus-share-link" href="https://plus.google.com/share?url={{@blog.url}}{-{titleSlug}}"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><i class="fa fa-google-plus"></i></a>
+            </section>
+            <hr class="mooble" style="margin-top:5em">
+            <div class="thanked">
+                <p class="thanks">{-{author.signoff}}&nbsp;</p>
+            </div>
+            <div class="author">
+                <img class="face" src="{-{author.avatar}}">
+                <div>
+                    <i><strong>{-{author.caption}}&nbsp;</strong></i>
+                    <h3>{-{-{author.name}}}&nbsp;</h3>
+                    <a class="location" href="{-{author.handle.link}}">{-{author.handle.name}}&nbsp;</a>
+                </div>
+                <p class="whiz">
+                    {-{#if author.facebook}}<a href="http://fb.me/{-{-{author.facebook}}}" class="social facebook" target="social"><i class="fa fa-facebook"></i></a>{-{/if}}
+                    {-{#if author.twitter}}<a href="http://twitter.com/{-{-{author.twitter}}}" class="social twitter" target="social"><i class="fa fa-twitter"></i></a>{-{/if}}
+                    {-{#if author.gplus}}<a href="http://plus.google.com/{-{-{author.gplus}}}" class="social gplus" target="social"><i class="fa fa-google-plus"></i></a>{-{/if}}
+                    {-{#if author.pinterest}}<a href="http://pinterest.com/{-{-{author.pinterest}}}" class="social pinterest" target="social"><i class="fa fa-pinterest"></i></a>{-{/if}}
+                    {-{#if author.github}}<a href="http://github.com/{-{-{author.github}}}" class="social github" target="social"><i class="fa fa-github"></i></a>{-{/if}}
+                </p>
+            </div>
+            <hr>
+            <div id="disqus_thread"></div>
+        </div>
+    </article>
+</script>
+<script>var indexPage = 1;</script>
